@@ -67,9 +67,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HomePage.aspx" />
+    <Content Include="Image\Thumbs\hands-holding-plant-silhouette-vector-graphics_template_1430381726381N7E.jpg" />
+    <Content Include="MovieDirectory.aspx" />
+    <Content Include="MovieListPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MovieDirectory.aspx.cs">
+      <DependentUpon>MovieDirectory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MovieDirectory.aspx.designer.cs">
+      <DependentUpon>MovieDirectory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MovieListPage.aspx.cs">
+      <DependentUpon>MovieListPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MovieListPage.aspx.designer.cs">
+      <DependentUpon>MovieListPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +106,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
