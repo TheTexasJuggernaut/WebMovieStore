@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -43,7 +44,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,8 +78,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MovieStore.mdf" />
+    <Content Include="App_Data\MovieStore_log.ldf" />
     <Content Include="HomePage.aspx" />
     <Content Include="Image\Thumbs\hands-holding-plant-silhouette-vector-graphics_template_1430381726381N7E.jpg" />
+    <Content Include="Models\MovieStoreModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MovieStoreModel.edmx</DependentUpon>
+      <LastGenOutput>MovieStoreModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MovieStoreModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MovieStoreModel.edmx</DependentUpon>
+      <LastGenOutput>MovieStoreModel.cs</LastGenOutput>
+    </Content>
     <Content Include="MovieDirectory.aspx" />
     <Content Include="MovieListPage.aspx" />
     <Content Include="Web.config" />
@@ -80,6 +103,37 @@
     </Compile>
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coupon.cs">
+      <DependentUpon>MovieStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>MovieStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataAccessLayer.cs" />
+    <Compile Include="Models\Movie.cs">
+      <DependentUpon>MovieStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovieStoreModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieStoreModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovieStoreModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovieStoreModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieStoreModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>MovieStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderItem.cs">
+      <DependentUpon>MovieStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MovieDirectory.aspx.cs">
       <DependentUpon>MovieDirectory.aspx</DependentUpon>
@@ -98,6 +152,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Models\MovieStoreModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MovieStoreModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MovieStoreModel.edmx.diagram">
+      <DependentUpon>MovieStoreModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -107,6 +168,9 @@
     </None>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
