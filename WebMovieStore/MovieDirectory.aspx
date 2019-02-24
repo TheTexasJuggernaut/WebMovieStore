@@ -10,46 +10,47 @@
     <form id="form1" runat="server">
         <div>
         </div>
-        Browse Popular Genres<p>
-            &nbsp;</p> 
+       <p> Browse Popular Genres
+            &nbsp;
+        </p>
 
-         <table style="height: 900px; width: 1200px">
-                <tr align="center">
-                    <td>
-                        <asp:ImageButton ID="ImageBtn1" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Action Comedy.PNG"/>
-                    </td>
-                    <td>
-                        <asp:ImageButton ID="ImageBtn2" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Action.PNG"  />
-                    </td>
-                    <td >
-                        <asp:ImageButton ID="ImageBtn3" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Animation.PNG"  />
-                    </td>
-                </tr>
-                <tr align="center">
-                    <td >
-                        <asp:ImageButton ID="ImageBtn4" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Comedy.PNG" />
-                    </td>
-                    <td class="auto-style7">
-                        <asp:ImageButton ID="ImageBtn5" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Fantasy.PNG"/>
-                    </td>
-                    <td class="auto-style7">
-                        <asp:ImageButton ID="ImageBtn6" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Romance.PNG" />
-                    </td>
-                </tr>
-                <tr align="center">
-                    <td >
-                        <asp:ImageButton ID="ImageBtn7" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Sci-Fi.PNG"  />
-                    </td>
-                    <td>
-                        <asp:ImageButton ID="ImageBtn8" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/SuperHero.PNG"  />
-                    </td>
-                    <td>
-                        <asp:ImageButton ID="ImageBtn9" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Thriller.PNG"  />
-                    </td>
-                </tr>
-            </table>
+        <table style="height: 900px; width: 1200px">
+            <tr align="center">
+                <td>
+                    <asp:ImageButton ID="ImageBtn1" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Action Comedy.PNG" OnClick="ImageBtn1_Click" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageBtn2" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Action.PNG" OnClick="ImageBtn2_Click" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageBtn3" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Animation.PNG" OnClick="ImageBtn3_Click" />
+                </td>
+            </tr>
+            <tr align="center">
+                <td>
+                    <asp:ImageButton ID="ImageBtn4" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Comedy.PNG" OnClick="ImageBtn4_Click" />
+                </td>
+                <td class="auto-style7">
+                    <asp:ImageButton ID="ImageBtn5" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Fantasy.PNG" OnClick="ImageBtn5_Click" />
+                </td>
+                <td class="auto-style7">
+                    <asp:ImageButton ID="ImageBtn6" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Romance.PNG" OnClick="ImageBtn6_Click" />
+                </td>
+            </tr>
+            <tr align="center">
+                <td>
+                    <asp:ImageButton ID="ImageBtn7" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Sci-Fi.PNG" OnClick="ImageBtn7_Click" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageBtn8" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/SuperHero.PNG" OnClick="ImageBtn8_Click" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageBtn9" runat="server" Height="150px" Width="250px" ImageUrl="~/Image/Thumbs/Thriller.PNG" OnClick="ImageBtn9_Click" />
+                </td>
+            </tr>
+        </table>
     </form>
-   <!-- <hr />
+    <!-- <hr />
     <hr />
     <hr />
     <hr /> -->

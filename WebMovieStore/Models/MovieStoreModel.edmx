@@ -36,7 +36,7 @@
           <Property Name="Description" Type="varchar(max)" />
           <Property Name="StarRating" Type="decimal" Precision="18" Scale="0" />
           <Property Name="Price" Type="smallmoney" />
-          <Property Name="ImageFileLocation" Type="varchar(max)" />
+          <Property Name="ImageFileLocation" Type="image" />
           <Property Name="PreviewUrl" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="OrderItems">
@@ -157,7 +157,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="StarRating" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Price" Type="Decimal" Precision="10" Scale="4" />
-          <Property Name="ImageFileLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ImageFileLocation" Type="String" MaxLength="Max" FixedLength="false" />
           <Property Name="PreviewUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_Movies" FromRole="Movies" ToRole="OrderItems" />
         </EntityType>
