@@ -81,6 +81,15 @@
     <Content Include="App_Data\MovieStore.mdf" />
     <Content Include="App_Data\MovieStore_log.ldf" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Image\Thumbs\Action Comedy.PNG" />
+    <Content Include="Image\Thumbs\Action.PNG" />
+    <Content Include="Image\Thumbs\Animation.PNG" />
+    <Content Include="Image\Thumbs\Comedy.PNG" />
+    <Content Include="Image\Thumbs\Fantasy.PNG" />
+    <Content Include="Image\Thumbs\Romance.PNG" />
+    <Content Include="Image\Thumbs\Sci-Fi.PNG" />
+    <Content Include="Image\Thumbs\SuperHero.PNG" />
+    <Content Include="Image\Thumbs\Thriller.PNG" />
     <Content Include="Models\MovieStoreModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MovieStoreModel.edmx</DependentUpon>
@@ -169,9 +178,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Image\Thumbs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
