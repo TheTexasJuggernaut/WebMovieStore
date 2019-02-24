@@ -21,11 +21,12 @@ namespace WebMovieStore
             string field = Login1.UserName.ToString();
             string pass = Login1.Password.ToString();
 
-            try
-            {
+           // try
+           // {
                 using (MovieStoreEDM context = new MovieStoreEDM())
                 {
                     var user = context.Customers.FirstOrDefault(u => u.Name == field);
+
 
                     if (user != null)
                     {
@@ -44,11 +45,11 @@ namespace WebMovieStore
                         Login1.FailureText = "Wrong Username";
                     }
                 }
-            }
-            catch
-            {
-
-            }
+           // }
+           // catch
+          //  {
+                Login1.FailureText = "Error";
+           // }
 
         }
 

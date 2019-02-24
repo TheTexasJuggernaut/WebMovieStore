@@ -36,7 +36,7 @@
           <Property Name="Description" Type="varchar(max)" />
           <Property Name="StarRating" Type="decimal" Precision="18" Scale="0" />
           <Property Name="Price" Type="smallmoney" />
-          <Property Name="ImageFileLocation" Type="image" />
+          <Property Name="ImageFileLocation" Type="varchar(max)" />
           <Property Name="PreviewUrl" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="OrderItems">
@@ -56,14 +56,6 @@
           <Property Name="Total" Type="smallmoney" />
           <Property Name="OrderDate" Type="datetime" />
           <Property Name="Status" Type="int" />
-        </EntityType>
-        <EntityType Name="UserData">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Username" Type="nchar" MaxLength="10" />
-          <Property Name="Password" Type="nchar" MaxLength="10" />
         </EntityType>
         <Association Name="FK_OrderItems_Movies">
           <End Role="Movies" Type="Self.Movies" Multiplicity="0..1" />
@@ -107,7 +99,6 @@
           <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UserData" EntityType="Self.UserData" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_OrderItems_Movies" Association="Self.FK_OrderItems_Movies">
             <End Role="Movies" EntitySet="Movies" />
             <End Role="OrderItems" EntitySet="OrderItems" />
@@ -157,7 +148,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="StarRating" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Price" Type="Decimal" Precision="10" Scale="4" />
-          <Property Name="ImageFileLocation" Type="String" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImageFileLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="PreviewUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_Movies" FromRole="Movies" ToRole="OrderItems" />
         </EntityType>
@@ -237,16 +228,7 @@
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderItems" EntitySet="OrderItems" />
           </AssociationSet>
-          <EntitySet Name="UserDatas" EntityType="MovieStoreModel.UserData" />
         </EntityContainer>
-        <EntityType Name="UserData">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -307,15 +289,6 @@
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="UserDatas">
-            <EntityTypeMapping TypeName="MovieStoreModel.UserData">
-              <MappingFragment StoreEntitySet="UserData">
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

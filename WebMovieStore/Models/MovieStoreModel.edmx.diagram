@@ -13,7 +13,6 @@
         <AssociationConnector Association="MovieStoreModel.FK_Orders_Customers" ManuallyRouted="false" />
         <AssociationConnector Association="MovieStoreModel.FK_OrderItems_Movies" ManuallyRouted="false" />
         <AssociationConnector Association="MovieStoreModel.FK_OrderItems_Orders" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="MovieStoreModel.UserData" Width="1.5" PointX="8.125" PointY="1.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

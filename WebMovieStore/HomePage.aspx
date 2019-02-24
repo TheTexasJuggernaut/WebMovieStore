@@ -16,7 +16,6 @@
             <TextBoxStyle Font-Size="0.8em" />
             <TitleTextStyle BackColor="#507CD1" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
         </asp:Login>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </form>
     </body>
 </html>
