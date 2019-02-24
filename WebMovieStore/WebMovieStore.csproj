@@ -81,7 +81,6 @@
     <Content Include="App_Data\MovieStore.mdf" />
     <Content Include="App_Data\MovieStore_log.ldf" />
     <Content Include="HomePage.aspx" />
-    <Content Include="Image\Thumbs\hands-holding-plant-silhouette-vector-graphics_template_1430381726381N7E.jpg" />
     <Content Include="Models\MovieStoreModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MovieStoreModel.edmx</DependentUpon>
@@ -167,7 +166,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Image\Thumbs\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
