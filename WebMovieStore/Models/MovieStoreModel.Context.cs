@@ -30,5 +30,6 @@ namespace WebMovieStore.Models
         public virtual DbSet<Movie> Movies1 { get; set; }
         public virtual DbSet<OrderItem> OrderItems { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<UserData> UserDatas { get; set; }
     }
 }

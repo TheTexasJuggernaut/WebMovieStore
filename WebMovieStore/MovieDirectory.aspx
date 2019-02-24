@@ -10,13 +10,8 @@
     <form id="form1" runat="server">
         <div>
         </div>
-        <!--Browse Popular Genres<p>
-            <asp:ImageButton ID="ImageButton1" runat="server"
-                AlternateText="ImageButton 1"
-                ImageAlign="left"
-                ImageUrl="Image/Thumbs/hands-holding-plant-silhouette-vector-graphics_template_1430381726381N7E.jpg"
-                OnClick="ImageButton_Click" />
-        </p> -->
+        Browse Popular Genres<p>
+            &nbsp;</p> 
 
          <table style="height: 900px; width: 1200px">
                 <tr align="center">
