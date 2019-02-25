@@ -23,8 +23,8 @@ namespace WebMovieStore
 
             }
 
-            TotalLabel.Text = TotalLabel.Text + Convert.ToString(sum);
-            Session["orderTotal"] = sum + (sum *.25);
+            TotalLabel.Text =  Convert.ToString(sum);
+            Session["orderTotal"] = sum + (sum * tax);
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -42,9 +42,9 @@ namespace WebMovieStore
             string field = TextBox1.Text;
             //string pass = Login1.Password.ToString();
 
-            // try
-            // {
-            using (MovieStoreEDM context = new MovieStoreEDM())
+            try
+            {
+                using (MovieStoreEDM context = new MovieStoreEDM())
             {
                 var user = context.Coupons.FirstOrDefault(u => u.Code == field);
 
@@ -53,24 +53,24 @@ namespace WebMovieStore
                 {
                     if (user.Code == field)
                     {
-                        Label1.Text = "Pass";
+                        Label1.Text = "Coupon Found";
                         tax = Convert.ToDouble(user.PercentValue);
                     }
                     else
                     {
-                        Label1.Text = "Wrong Password";
+                        Label1.Text = "Wrong Code";
                     }
                 }
                 else
                 {
-                    Label1.Text = "Wrong Username";
+                    Label1.Text = "Wrong Code";
                 }
             }
-            // }
-            // catch
-            //  {
-            Label1.Text = "Error";
-            // }
+            }
+            catch
+            {
+                //Label1.Text = "Error";
+            }
         }
     }
 }
