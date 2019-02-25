@@ -29,8 +29,8 @@ namespace WebMovieStore
 
             }
 
-            TotalLabel.Text = TotalLabel.Text + Convert.ToString(sum);
-            Session["orderTotal"] = sum + (sum *.25);
+            TotalLabel.Text = Convert.ToString(sum);
+            Session["orderTotal"] = sum + (sum * .25);
         }
 
         /// <summary>
