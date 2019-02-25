@@ -11,7 +11,11 @@ namespace WebMovieStore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+       
+             string test = Session["GENRE"].ToString();
+            string fear = "5";
+         
+            
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebMovieStore.Models
 {
-    public enum GenreTypes { COMEDY, ACTION, ADVENTURE, ANIMATION, DRAMA, MYSTERY, ROMANCE, SCIFI, THRILLER };
+    public enum GenreTypes { ACTIONCOMEDY, ACTION, COMEDY, FANTASY, ANIMATION, ROMANCE, SUPERHERO, SCIFI, THRILLER };
 
     public class DataAccessLayer
     {
