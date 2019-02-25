@@ -9,6 +9,49 @@ namespace WebMovieStore.Models
 
     public class DataAccessLayer
     {
+        public void addOrderItem(OrderItem orderItem)
+        {
+            using (var context = new MovieStoreEDM())
+            {
+                context.OrderItems.Add(orderItem);
+                context.SaveChanges();
+            }
+        }
+
+        public int addOrder(Order order)
+        {
+            using (var context = new MovieStoreEDM())
+            {
+                context.Orders.Add(order);
+                context.SaveChanges();
+            }
+
+            return order.Id;
+        }
+
+        public Movie getProduct(int productID)
+        {
+            using (var context = new MovieStoreEDM())
+            {
+                Movie movie = (from p in context.Movies1 where p.Id == productID select p).FirstOrDefault<Movie>();
+                
+                return movie;
+            }
+        }
+
+        public void updateOrder(Order order)
+        {
+            using (var context = new MovieStoreEDM())
+            {
+                Order orderRecord = (from p in context.Orders
+                                     where p.Id == order.Id
+                                     select p).FirstOrDefault<Order>();
+                orderRecord.Customer= order.Customer; 
+                orderRecord.Total = order.Total;
+                orderRecord.Status = 0;
+                context.SaveChanges();
+            }
+        }
         public List<Movie> getMoviesByGenre(GenreTypes genre)
         {
             using (var context = new MovieStoreEDM())
@@ -32,15 +75,7 @@ namespace WebMovieStore.Models
             }
         }
 
-        public void addOrderItem(OrderItem orderItem)
-        {
-            using (var context = new MovieStoreEDM())
-            {
-                context.OrderItems.Add(orderItem);
-                context.SaveChanges();
-
-            }
-        }
+        
 
         public Customer getCustomerByUsername(string username)
         {
