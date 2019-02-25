@@ -14,7 +14,12 @@ namespace WebMovieStore.Models
             using (var context = new MovieStoreEDM())
             {
                 context.OrderItems.Add(orderItem);
-                context.SaveChanges();
+                try { context.SaveChanges(); }
+                catch
+                {
+
+                }
+                
             }
         }
 

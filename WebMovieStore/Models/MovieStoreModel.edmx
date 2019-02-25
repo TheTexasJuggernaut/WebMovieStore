@@ -47,7 +47,7 @@
           <Property Name="OrderId" Type="int" />
           <Property Name="MovieId" Type="int" />
           <Property Name="Cost" Type="smallmoney" />
-          <Property Name="MovieName" Type="nchar" MaxLength="10" />
+          <Property Name="MovieName" Type="text" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -164,7 +164,7 @@
           <NavigationProperty Name="Movy" Relationship="Self.FK_OrderItems_Movies" FromRole="OrderItems" ToRole="Movies" />
           <NavigationProperty Name="Order" Relationship="Self.FK_OrderItems_Orders" FromRole="OrderItems" ToRole="Orders" />
           <Property Name="Cost" Type="Decimal" Precision="10" Scale="4" />
-          <Property Name="MovieName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MovieName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>

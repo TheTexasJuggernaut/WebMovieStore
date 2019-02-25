@@ -80,6 +80,7 @@
   <ItemGroup>
     <Content Include="App_Data\MovieStore.mdf" />
     <Content Include="App_Data\MovieStore_log.ldf" />
+    <Content Include="Checkout.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="Image\MovieSnaps\DeadPool.jpg" />
     <Content Include="Image\MovieSnaps\Hangover.jpg" />
@@ -110,6 +111,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

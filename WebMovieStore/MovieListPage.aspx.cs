@@ -13,18 +13,18 @@ namespace WebMovieStore
  
    
     {
-        int id;
-        bool Oneshot = false;
+     
+        
         DataAccessLayer db = new DataAccessLayer();
         //CurrentOrder currentOrder = new CurrentOrder();
         protected void Page_Load(object sender, EventArgs e)
         {
            
             string test = Session["GENRE"].ToString();
-            if (Oneshot == false)
+            if (!this.IsPostBack)
             {
                 createNewOrder();
-                Oneshot = true;
+               
             }
           
 
@@ -32,11 +32,19 @@ namespace WebMovieStore
         protected void createNewOrder()
         {
             Order newOrder = new Order();
-             id = db.addOrder(newOrder);
+             int id = db.addOrder(newOrder);
             Session["newOrderId"] = id;
         }
 
-      
+        protected void DataList1_ItemCommand1(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "PurchaseOption")
+            {
+                string selected = e.CommandArgument.ToString();
+                string test;
+                addProductToOrder(selected);
+            }
+        }
         private void addProductToOrder(String selectedProductID)
         {
             OrderItem orderItem = new OrderItem()
@@ -52,7 +60,7 @@ namespace WebMovieStore
             db.addOrderItem(orderItem);
 
             //update orderList
-            //orderList.DataBind();
+            GridView1.DataBind();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -60,14 +68,14 @@ namespace WebMovieStore
 
         }
 
-        protected void DataList1_ItemCommand1(object source, DataListCommandEventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
         {
-            if (e.CommandName == "PurchaseOption")
-            {
-                string selected = e.CommandArgument.ToString();
-                string test;
-                addProductToOrder(selected);
-            }
+            Response.Redirect("Checkout.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MovieDirectory.aspx");
         }
     }
 }

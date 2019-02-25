@@ -41,6 +41,21 @@
         <div>
             <asp:Label ID="Label5" runat="server" Text="Movie Listing" Font-Size="X-Large"></asp:Label>
         </div>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
+            <Columns>
+                <asp:BoundField DataField="OrderId" HeaderText="OrderId" SortExpression="OrderId" />
+                <asp:BoundField DataField="MovieId" HeaderText="MovieId" SortExpression="MovieId" />
+                <asp:BoundField DataField="Cost" HeaderText="Cost" SortExpression="Cost" />
+                <asp:BoundField DataField="MovieName" HeaderText="MovieName" SortExpression="MovieName" />
+            </Columns>
+        </asp:GridView>
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Categories" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="SubmitOrder" />
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MovieStoreDatabaseString %>" SelectCommand="SELECT [OrderId], [MovieId], [Cost], [MovieName] FROM [OrderItems] WHERE ([OrderId] = @OrderId)">
+            <SelectParameters>
+                <asp:SessionParameter Name="OrderId" SessionField="newOrderId" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         <asp:DataList ID="DataList1" runat="server" DataKeyField="Id" DataSourceID="SqlDataSource1" Width="514px" GridLines="Both" BorderColor="Gray" BorderWidth="1px" CellPadding="2" CellSpacing="2" HorizontalAlign="Center" OnItemCommand="DataList1_ItemCommand1">
             <ItemTemplate>
                 <table class="auto-style1">
