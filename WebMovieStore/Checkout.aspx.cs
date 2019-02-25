@@ -12,6 +12,7 @@ namespace WebMovieStore
     public partial class Checkout : System.Web.UI.Page
     {
         double sum;
+        double tax = 0;
         DataAccessLayer db = new DataAccessLayer();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,6 +35,42 @@ namespace WebMovieStore
             newOrder.Total = Convert.ToDecimal(Session["orderTotal"].ToString());
             newOrder.Status = 0;
             db.updateOrder(newOrder);
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string field = TextBox1.Text;
+            //string pass = Login1.Password.ToString();
+
+            // try
+            // {
+            using (MovieStoreEDM context = new MovieStoreEDM())
+            {
+                var user = context.Coupons.FirstOrDefault(u => u.Code == field);
+
+                
+                if (user != null)
+                {
+                    if (user.Code == field)
+                    {
+                        Label1.Text = "Pass";
+                        tax = Convert.ToDouble(user.PercentValue);
+                    }
+                    else
+                    {
+                        Label1.Text = "Wrong Password";
+                    }
+                }
+                else
+                {
+                    Label1.Text = "Wrong Username";
+                }
+            }
+            // }
+            // catch
+            //  {
+            Label1.Text = "Error";
+            // }
         }
     }
 }

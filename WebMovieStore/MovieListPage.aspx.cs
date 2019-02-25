@@ -41,7 +41,7 @@ namespace WebMovieStore
             if (e.CommandName == "PurchaseOption")
             {
                 string selected = e.CommandArgument.ToString();
-                string test;
+                
                 addProductToOrder(selected);
             }
         }

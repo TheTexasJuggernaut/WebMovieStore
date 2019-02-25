@@ -19,8 +19,9 @@
                 <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
             </Columns>
         </asp:GridView>
-        <asp:Button ID="Button2" runat="server" Text="Test Coupon" />
+        <asp:Button ID="Button2" runat="server" Text="Test Coupon" OnClick="Button2_Click" />
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         <p>
             <asp:Label ID="TotalLabel" runat="server" Text="TotalCost: "></asp:Label>
         </p>
