@@ -30,7 +30,31 @@ namespace WebMovieStore
             Session["newOrderId"] = id;
         }
 
-        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+      
+        private void addProductToOrder(String selectedProductID)
+        {
+            OrderItem orderItem = new OrderItem()
+            {
+               OrderId = Convert.ToInt32(Session["newOrderId"].ToString()),
+                MovieId = Convert.ToInt32(selectedProductID),
+                Cost = db.getProduct(Convert.ToInt32(selectedProductID)).Price,
+                MovieName = db.getProduct(Convert.ToInt32(selectedProductID)).Title,
+
+
+            };
+
+            db.addOrderItem(orderItem);
+
+            //update orderList
+            //orderList.DataBind();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DataList1_ItemCommand1(object source, DataListCommandEventArgs e)
         {
             if (e.CommandName == "PurchaseOption")
             {
@@ -38,20 +62,6 @@ namespace WebMovieStore
                 string test;
                 addProductToOrder(selected);
             }
-        }
-        private void addProductToOrder(String selectedProductID)
-        {
-            OrderItem orderItem = new OrderItem()
-            {
-               OrderId = Convert.ToInt32(Session["newOrderId"].ToString()),
-                MovieId = Convert.ToInt32(selectedProductID),
-                
-            };
-
-            db.addOrderItem(orderItem);
-
-            //update orderList
-            //orderList.DataBind();
         }
     }
 }

@@ -17,6 +17,8 @@ namespace WebMovieStore.Models
         public int Id { get; set; }
         public Nullable<int> OrderId { get; set; }
         public Nullable<int> MovieId { get; set; }
+        public Nullable<decimal> Cost { get; set; }
+        public string MovieName { get; set; }
     
         public virtual Movie Movy { get; set; }
         public virtual Order Order { get; set; }

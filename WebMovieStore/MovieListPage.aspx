@@ -41,7 +41,7 @@
         <div>
             <asp:Label ID="Label5" runat="server" Text="Movie Listing" Font-Size="X-Large"></asp:Label>
         </div>
-        <asp:DataList ID="DataList1" runat="server" DataKeyField="Id" DataSourceID="SqlDataSource1" Width="514px" GridLines="Both" BorderColor="Gray" BorderWidth="1px" CellPadding="2" CellSpacing="2" HorizontalAlign="Center">
+        <asp:DataList ID="DataList1" runat="server" DataKeyField="Id" DataSourceID="SqlDataSource1" Width="514px" GridLines="Both" BorderColor="Gray" BorderWidth="1px" CellPadding="2" CellSpacing="2" HorizontalAlign="Center" OnItemCommand="DataList1_ItemCommand1">
             <ItemTemplate>
                 <table class="auto-style1">
                     <tr>
@@ -72,7 +72,7 @@
                         </td>
                     </tr>
                 </table>
-                <asp:Button ID="Button1" runat="server"  Text="Purchase" CommandName="PurchaseOption" CommandArgument='<%# Eval("Id") %>'/>
+                <asp:Button ID="Button1" runat="server"  Text="Purchase" CommandName="PurchaseOption" CommandArgument='<%# Eval("Id") %>' OnClick="Button1_Click"/>
                 <br />
                 <br />
             </ItemTemplate>

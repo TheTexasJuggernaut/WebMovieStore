@@ -46,6 +46,8 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderId" Type="int" />
           <Property Name="MovieId" Type="int" />
+          <Property Name="Cost" Type="smallmoney" />
+          <Property Name="MovieName" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -161,6 +163,8 @@
           <Property Name="MovieId" Type="Int32" />
           <NavigationProperty Name="Movy" Relationship="Self.FK_OrderItems_Movies" FromRole="OrderItems" ToRole="Movies" />
           <NavigationProperty Name="Order" Relationship="Self.FK_OrderItems_Orders" FromRole="OrderItems" ToRole="Orders" />
+          <Property Name="Cost" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="MovieName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -275,6 +279,8 @@
           <EntitySetMapping Name="OrderItems">
             <EntityTypeMapping TypeName="MovieStoreModel.OrderItem">
               <MappingFragment StoreEntitySet="OrderItems">
+                <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
                 <ScalarProperty Name="MovieId" ColumnName="MovieId" />
