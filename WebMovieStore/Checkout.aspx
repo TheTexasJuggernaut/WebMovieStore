@@ -19,6 +19,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             </asp:Panel>
+            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="GoBack" />
             <br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="OrderSummaryDetails">
             <Columns>
@@ -29,12 +30,13 @@
                 <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
             </Columns>
         </asp:GridView>
-        <asp:Button ID="Button2" runat="server" Text="Test Coupon" />
+        <asp:Button ID="Button2" runat="server" Text="Test Coupon" OnClick="Button2_Click" />
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         <p>
             <asp:Label ID="TotalLabel" runat="server" Text="TotalCost: "></asp:Label>
         </p>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Purchase" />
         <asp:SqlDataSource ID="OrderSummaryDetails" runat="server" ConnectionString="<%$ ConnectionStrings:MovieStoreDatabaseString %>" SelectCommand="SELECT [OrderId], [MovieId], [Cost], [MovieName], [Id] FROM [OrderItems] WHERE ([OrderId] = @OrderId)">
             <SelectParameters>
                 <asp:SessionParameter Name="OrderId" SessionField="newOrderId" Type="Int32" />
