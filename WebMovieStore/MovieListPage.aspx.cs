@@ -29,13 +29,14 @@ namespace WebMovieStore
             int id = db.addOrder(newOrder);
             Session["newOrderId"] = id;
         }
-        
+
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
             if (e.CommandName == "PurchaseOption")
             {
                 string selected = e.CommandArgument.ToString();
                 string test;
+                addProductToOrder(selected);
             }
         }
         private void addProductToOrder(String selectedProductID)
