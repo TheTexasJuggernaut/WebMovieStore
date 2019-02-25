@@ -11,19 +11,19 @@ namespace WebMovieStore
 
     public partial class Checkout : System.Web.UI.Page
     {
-        decimal sum;
+        double sum;
         DataAccessLayer db = new DataAccessLayer();
         protected void Page_Load(object sender, EventArgs e)
         {
             // int sum;
             for (int i = 0; i < GridView1.Rows.Count; i++)
             {
-                sum += Convert.ToDecimal(GridView1.Rows[i].Cells[2].Text);
+                sum += Convert.ToDouble(GridView1.Rows[i].Cells[2].Text);
 
             }
 
             TotalLabel.Text = TotalLabel.Text + Convert.ToString(sum);
-            Session["orderTotal"] = sum;
+            Session["orderTotal"] = sum + (sum *.25);
         }
 
         protected void Button1_Click(object sender, EventArgs e)
