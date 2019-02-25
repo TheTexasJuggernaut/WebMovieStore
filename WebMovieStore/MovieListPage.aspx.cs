@@ -11,11 +11,20 @@ namespace WebMovieStore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-       
-             string test = Session["GENRE"].ToString();
 
-           
-            
+            string test = Session["GENRE"].ToString();
+
+
+
+        }
+
+        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "PurchaseOption")
+            {
+                string selected = e.CommandArgument.ToString();
+                string test;
+            }
         }
     }
 }

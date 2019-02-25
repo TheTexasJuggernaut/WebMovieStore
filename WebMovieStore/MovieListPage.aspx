@@ -46,7 +46,7 @@
                 <asp:SessionParameter Name="Genre" SessionField="GENRE" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:DataList ID="DataList1" runat="server" DataKeyField="Id" DataSourceID="SqlDataSource1" Width="514px" GridLines="Both" BorderColor="Gray" BorderWidth="1px" CellPadding="2" CellSpacing="2" HorizontalAlign="Center">
+        <asp:DataList ID="DataList1" runat="server" DataKeyField="Id" DataSourceID="SqlDataSource1" Width="514px" GridLines="Both" BorderColor="Gray" BorderWidth="1px" CellPadding="2" CellSpacing="2" HorizontalAlign="Center" OnItemCommand="DataList1_ItemCommand">
             <ItemTemplate>
                 <table class="auto-style1">
                     <tr>
@@ -77,7 +77,7 @@
                         </td>
                     </tr>
                 </table>
-                <asp:Button ID="Button1" runat="server"  Text="Purchase" />
+                <asp:Button ID="Button1" runat="server"  Text="Purchase" CommandName="PurchaseOption" CommandArgument='<%# Eval("Id") %>'/>
                 <br />
                 <br />
             </ItemTemplate>
