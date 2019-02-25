@@ -38,6 +38,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <br />
+            <asp:Panel ID="Panel1" runat="server" Height="39px" >
+                <asp:Label ID="LoggedInAsLabel" runat="server" Text="LoggedInAsLabel"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="LogOutBtn" runat="server" OnClick="LogOutBtn_Click">Log Out</asp:LinkButton>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </asp:Panel>
+            <br />
         <div>
             <asp:Label ID="Label5" runat="server" Text="Movie Listing" Font-Size="X-Large"></asp:Label>
         </div>

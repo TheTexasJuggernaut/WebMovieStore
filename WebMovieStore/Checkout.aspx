@@ -10,6 +10,16 @@
     <form id="form1" runat="server">
         <div>
         </div>
+        <br />
+            <asp:Panel ID="Panel1" runat="server" Height="39px" >
+                <div class="auto-style5">
+                    <asp:Label ID="LoggedInAsLabel" runat="server" Text="LoggedInAsLabel"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:LinkButton ID="LogOutBtn" runat="server" OnClick="LogOutBtn_Click">Log Out</asp:LinkButton>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </asp:Panel>
+            <br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="OrderSummaryDetails">
             <Columns>
                 <asp:BoundField DataField="OrderId" HeaderText="OrderId" SortExpression="OrderId" />

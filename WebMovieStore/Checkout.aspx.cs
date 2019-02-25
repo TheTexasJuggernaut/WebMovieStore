@@ -13,8 +13,15 @@ namespace WebMovieStore
     {
         double sum;
         DataAccessLayer db = new DataAccessLayer();
+
+        /// <summary>
+        /// 
+        /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
+            //set the username
+            this.LoggedInAsLabel.Text = "Logged In As: " + Session["Username"].ToString();
+
             // int sum;
             for (int i = 0; i < GridView1.Rows.Count; i++)
             {
@@ -26,14 +33,29 @@ namespace WebMovieStore
             Session["orderTotal"] = sum + (sum *.25);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         protected void Button1_Click(object sender, EventArgs e)
         {
             Order newOrder = new Order();
             newOrder.Id = Convert.ToInt32(Session["newOrderId"].ToString());
-            newOrder.Customer = db.getCustomerByUsername("Shawn");
+            Customer customer = db.getCustomerByUsername(Session["Username"].ToString());
+            newOrder.CustomerId = customer.Id;
             newOrder.Total = Convert.ToDecimal(Session["orderTotal"].ToString());
             newOrder.Status = 0;
+            newOrder.OrderDate = DateTime.Now;
+
             db.updateOrder(newOrder);
+        }
+
+        /// <summary>
+        /// LogOutBtn Click Event implementation
+        /// </summary>
+        protected void LogOutBtn_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("MovieStoreLogin.aspx");
         }
     }
 }
