@@ -13,20 +13,26 @@ namespace WebMovieStore
  
    
     {
+        int id;
+        bool Oneshot = false;
         DataAccessLayer db = new DataAccessLayer();
         //CurrentOrder currentOrder = new CurrentOrder();
         protected void Page_Load(object sender, EventArgs e)
         {
            
             string test = Session["GENRE"].ToString();
-
-            createNewOrder();
+            if (Oneshot == false)
+            {
+                createNewOrder();
+                Oneshot = true;
+            }
+          
 
         }
         protected void createNewOrder()
         {
             Order newOrder = new Order();
-            int id = db.addOrder(newOrder);
+             id = db.addOrder(newOrder);
             Session["newOrderId"] = id;
         }
 
