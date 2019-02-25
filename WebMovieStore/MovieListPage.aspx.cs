@@ -13,8 +13,8 @@ namespace WebMovieStore
         {
        
              string test = Session["GENRE"].ToString();
-            string fear = "5";
-         
+
+           
             
         }
     }

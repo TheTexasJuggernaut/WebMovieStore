@@ -39,7 +39,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label5" runat="server" Text="Movie Listing" Font-Size="X-Large"></asp:Label>
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MovieStoreDatabaseString %>" SelectCommand="SELECT [Id], [Title], [Genre], [YearReleased], [AgeRating], [Duration], [Description], [StarRating], [Price], [PreviewUrl], [ImageFileLocation] FROM [Movies] WHERE ([Genre] = @Genre)">
             <SelectParameters>
@@ -51,7 +51,8 @@
                 <table class="auto-style1">
                     <tr>
                         <td class="auto-style3" colspan="3">
-                            <asp:Label ID="Label1" runat="server" Font-Bold="True" Text='<%# Eval("Title") %>' Font-Size="Larger" BackColor="#666666" BorderColor="#3366CC" ></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Font-Bold="True" Text='<%# Eval("Title") %>' Font-Size="Larger" BackColor="Silver" BorderColor="#3366CC" ForeColor="#003366" ></asp:Label>
+                            <asp:Label ID="Label8" runat="server" Text='<%# Eval("YearReleased") %>'></asp:Label>
                             <div class="video">
                             </div>
                         </td>
@@ -76,6 +77,7 @@
                         </td>
                     </tr>
                 </table>
+                <asp:Button ID="Button1" runat="server"  Text="Purchase" />
                 <br />
                 <br />
             </ItemTemplate>

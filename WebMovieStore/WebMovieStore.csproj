@@ -81,8 +81,11 @@
     <Content Include="App_Data\MovieStore.mdf" />
     <Content Include="App_Data\MovieStore_log.ldf" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Image\MovieSnaps\DeadPool.jpg" />
     <Content Include="Image\MovieSnaps\Hangover.jpg" />
     <Content Include="Image\MovieSnaps\IFeelPretty.jpg" />
+    <Content Include="Image\MovieSnaps\TheEqualizer.jpg" />
+    <Content Include="Image\MovieSnaps\TropicThunder.jpg" />
     <Content Include="Image\Thumbs\Action Comedy.PNG" />
     <Content Include="Image\Thumbs\Action.PNG" />
     <Content Include="Image\Thumbs\Animation.PNG" />
