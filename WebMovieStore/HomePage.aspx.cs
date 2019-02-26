@@ -13,7 +13,7 @@ namespace WebMovieStore
         Customer List = new Customer();
        
         /// <summary>
-        /// 
+        /// Action when page is loaded
         /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,15 +21,15 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Login event handler that allows the username and pass to be checked
         /// </summary>
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             string field = Login1.UserName.ToString();
             string pass = Login1.Password.ToString();
 
-           // try
-           // {
+            try
+            {
                 using (MovieStoreEDM context = new MovieStoreEDM())
                 {
                     var user = context.Customers.FirstOrDefault(u => u.Name == field);
@@ -53,16 +53,16 @@ namespace WebMovieStore
                         Login1.FailureText = "Wrong Username";
                     }
                 }
-           // }
-           // catch
-          //  {
+            }
+            catch
+            {
                 Login1.FailureText = "Error";
-           // }
+            }
 
         }
 
         /// <summary>
-        /// 
+        /// Unused
         /// </summary>
         protected void Password_TextChanged(object sender, EventArgs e)
         {
@@ -70,7 +70,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Unused
         /// </summary>
         protected void UserName_TextChanged(object sender, EventArgs e)
         {
@@ -78,7 +78,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Unused
         /// </summary>
         protected void LoginButton_Click(object sender, EventArgs e)
         {

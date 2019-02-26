@@ -10,7 +10,7 @@ namespace WebMovieStore
     public partial class MovieDirectory : System.Web.UI.Page
     {
         /// <summary>
-        /// 
+        /// Page Load Event Trigger
         /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,7 +19,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Redirect button
         /// </summary>
         protected void ImageBtn1_Click(object sender, ImageClickEventArgs e)
         {
@@ -29,7 +29,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Redirect button
         /// </summary>
         protected void ImageBtn2_Click(object sender, ImageClickEventArgs e)
         {
@@ -38,7 +38,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Redirect button
         /// </summary>
         protected void ImageBtn3_Click(object sender, ImageClickEventArgs e)
         {
@@ -47,7 +47,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Redirect button
         /// </summary>
         protected void ImageBtn4_Click(object sender, ImageClickEventArgs e)
         {
@@ -56,7 +56,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Redirect button
         /// </summary>
         protected void ImageBtn5_Click(object sender, ImageClickEventArgs e)
         {
@@ -65,7 +65,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Redirect button
         /// </summary>
         protected void ImageBtn6_Click(object sender, ImageClickEventArgs e)
         {
@@ -74,7 +74,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Redirect button
         /// </summary>
         protected void ImageBtn7_Click(object sender, ImageClickEventArgs e)
         {
@@ -83,7 +83,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Redirect button
         /// </summary>
         protected void ImageBtn8_Click(object sender, ImageClickEventArgs e)
         {
@@ -92,7 +92,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Redirect button
         /// </summary>
         protected void ImageBtn9_Click(object sender, ImageClickEventArgs e)
         {

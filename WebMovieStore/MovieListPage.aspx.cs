@@ -19,7 +19,7 @@ namespace WebMovieStore
         //CurrentOrder currentOrder = new CurrentOrder();
 
         /// <summary>
-        /// 
+        /// Page load event triger
         /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,7 +37,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Creates new Order in DB
         /// </summary>
         protected void createNewOrder()
         {
@@ -51,7 +51,7 @@ namespace WebMovieStore
 
 
         /// <summary>
-        /// 
+        /// Command argument that allows selected product to be purchased
         /// </summary>
         protected void DataList1_ItemCommand1(object source, DataListCommandEventArgs e)
         {
@@ -64,7 +64,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Adds items to order DB
         /// </summary>
         private void addProductToOrder(String selectedProductID)
         {
@@ -85,7 +85,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Unused
         /// </summary>
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -93,7 +93,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Unused
         /// </summary>
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -104,7 +104,7 @@ namespace WebMovieStore
         }
 
         /// <summary>
-        /// 
+        /// Unused
         /// </summary>
         protected void Button3_Click(object sender, EventArgs e)
         {
