@@ -10,6 +10,12 @@
     <form id="form1" runat="server">
         <div>
         </div>
+        <asp:Panel ID="Panel1" runat="server" Height="39px" >
+                <asp:Label ID="LoggedInAsLabel" runat="server" Text="LoggedInAsLabel"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="LogOutBtn" runat="server" OnClick="LogOutBtn_Click">Log Out</asp:LinkButton>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </asp:Panel>
        <p> Browse Popular Genres
             &nbsp;
         </p>
